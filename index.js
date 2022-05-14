@@ -18,20 +18,13 @@ const medicos = [
   },
 ];
 
-const nomesMedicos = (medico) => {
+const nomesMedicos = medicos.map((medico) => {
   if (medico.genero === 'masculino') {
-    const masculino = {
-      nome: 'Dr. ' + medico.nome + ' ' + medico.sobrenome,
-    };
+    return 'Dr. ' + medico.nome + ' ' + medico.sobrenome;
   } else if (medico.genero === 'feminino') {
-    const feminino = {
-      nome: 'Dr(a). ' + medico.nome + ' ' + medico.sobrenome,
-    };
-  } else {
-    const naoBinario = {
-      nome: 'Dr(e). ' + medico.nome + ' ' + medico.sobrenome,
-    };
+    return 'Dr(a). ' + medico.nome + ' ' + medico.sobrenome;
   }
-};
+  return 'Dr(e). ' + medico.nome + ' ' + medico.sobrenome;
+});
 
-const medicoss = 
+console.log(nomesMedicos);
